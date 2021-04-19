@@ -1,0 +1,193 @@
+/* --------STYLES------- */
+
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: rgb(184, 218, 105);
+    font-family: 'Open Sans', sans-serif;
+}
+#board{
+    background-color: rgb(239, 255, 194);
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(20,1fr);
+    width: 100vmin;
+    height: 100vmin;
+}
+.game-over{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0,0,0,0.40);
+    transition: all 0.5s;
+}
+#restart-button{
+    font-size: 8vmin;
+    border: 0.5vmin solid white;
+    color: white;
+    background-color: rgb(84, 97, 0);;
+    border-radius: 1.5vmin;
+    outline: none;
+    transition: all 0.25s;
+    margin-bottom: 25vmin;
+}
+#restart-button:hover{
+    font-size: 9vmin;
+    background-color: rgb(143, 165, 0);;
+}
+#score{
+    font-size: 8vmin;
+    color: white;
+}
+#high-score{
+    font-size: 4vmin;
+    color: white;
+}
+.show{
+    opacity:100%;
+}
+.snake {
+    background-color: rgb(143, 165, 0);
+}
+.food{
+    background-color: rgb(253, 148, 100);
+    border-radius: 50%;
+}
+
+
+
+
+/* ---------ANIMATIONS---------- */
+
+
+
+.head-up{
+    animation-name: head-up;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+}
+@keyframes head-up {
+    from {
+        height: 0%;
+        margin-top: 100%
+        
+    }
+    to {
+        height: 101%;
+        margin-top: 0%;
+    }
+}
+.head-down{
+    animation-name: head-down;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+}
+@keyframes head-down {
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
+}
+.head-right{
+    animation-name: head-right;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+}
+@keyframes head-right {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+.head-left{
+    animation-name: head-left;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+}
+@keyframes head-left{
+    from {
+        width: 0%;
+        margin-left: 100%;
+    }
+    to {
+        width: 101%;
+        margin-left: 0%;
+    }
+}
+.tail-up{
+    animation-name: tail-up;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes tail-up{
+    from {
+        height: 100%;
+    }
+    to {
+        height: 0%;
+    }
+}
+.tail-down{
+    animation-name: tail-down;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes tail-down{
+    from {
+        height: 101%;
+        margin-top: 0%;
+    }
+    to {
+        height: 0%;
+        margin-top: 100%;
+    }
+}
+.tail-right{
+    animation-name: tail-right;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes tail-right{
+    from {
+        width: 101%;
+        margin-left: 0%;
+    }
+    to {
+        width: 0%;
+        margin-left: 100%;
+    }
+}
+.tail-left{
+    animation-name: tail-left;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes tail-left{
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
